@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+    <style>
+               body {
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('https://www.hdwallpapers.in/thumbs/2021/creamy_cake_hd_food-t2.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        } 
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            width: 100px;
+            size:80px;
+    height: 100px;
+    border-radius: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f9fff9;
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+        <h1>Categories</h1>
+    </div>
+        {% for category in categories %}
+            <button class="category-button" onclick="location.href='/stocks/{{ category['category'] }}'">
+                {{ category['category'] }}
+            </button>
+        {% endfor %}
+        <button class="category-button" onclick="location.href='/home'">
+            Home
+        </button>
+    </div>
+   
+</body>
+</html>

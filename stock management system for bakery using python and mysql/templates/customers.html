@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            background-image:url('https://img.lovepik.com/photo/48013/3638.jpg_wh860.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffffcc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #ff4f4f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .close-btn:hover {
+            background-color: #e60000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Customers</h1>
+             <button class="close-btn" onclick="location.href='/home'">Close</button>
+            </div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Date</th>
+        </tr>
+        {% for customer in customers_data %}
+        <tr>
+            <td>{{ customer['customer_name'] }}</td>
+            <td>{{ customer['customer_phone'] }}</td>
+            <td>{{ customer['bill_date'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

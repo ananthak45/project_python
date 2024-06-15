@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('https://images7.alphacoders.com/135/1350367.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        } 
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        button {
+            width: 100px;
+            size:80px;
+    height: 100px;
+    border-radius: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafeffad;
+    transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f9fff9;
+        }
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="/suppliers">
+            <button type="submit">Suppliers</button>
+        </form>
+        <form method="post" action="/customers">
+            <button type="submit">Customers</button>
+        </form>
+        <form method="post" action="/stocks">
+            <button type="submit">Stocks</button>
+        </form>
+        <form method="post" action="/billing">
+            <button type="submit">Bill</button>
+        </form>
+        <form method="post" action="/">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
